@@ -1,4 +1,4 @@
-# Copyright 2025 The Wazo Authors  (see the AUTHORS file)
+# Copyright 2025-2026 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from __future__ import annotations
@@ -79,7 +79,7 @@ def screen_blocklist(agi: agid.FastAGI, cursor: DictCursor, args: list[str]) -> 
     try:
         number = interpret_number(caller_id_number, user_country)
     except phonenumbers.NumberParseException as ex:
-        logger.error(
+        logger.warning(
             'Failed to screen number %s with blocklist of user %s: %s',
             caller_id_number,
             user_uuid,
